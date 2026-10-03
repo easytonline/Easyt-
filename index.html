@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -34,10 +33,7 @@ body{
   margin:auto;
 }
 
-
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 
 .logo{
   display:flex;
@@ -52,10 +48,7 @@ body{
   display:block;
 }
 
-
-/* =========================
-   MAIN CARD
-========================= */
+/* MAIN CARD */
 
 .card{
   background:rgba(255,255,255,.97);
@@ -67,10 +60,7 @@ body{
     0 0 35px rgba(255,0,0,.08);
 }
 
-
-/* =========================
-   TOP ICON
-========================= */
+/* TOP ICON */
 
 .icon-row{
   display:flex;
@@ -115,10 +105,7 @@ body{
     0 9px 24px rgba(200,0,0,.22);
 }
 
-
-/* =========================
-   TITLES
-========================= */
+/* TITLES */
 
 .main-title{
   text-align:center;
@@ -135,10 +122,7 @@ body{
   margin:8px 0 26px;
 }
 
-
-/* =========================
-   AMOUNT
-========================= */
+/* AMOUNT */
 
 .amount-box{
   background:linear-gradient(
@@ -166,10 +150,7 @@ body{
   margin-top:7px;
 }
 
-
-/* =========================
-   RECEIPT NUMBER
-========================= */
+/* RECEIPT NUMBER */
 
 .field-title{
   display:flex;
@@ -234,10 +215,7 @@ input::placeholder{
   color:#aaa;
 }
 
-
-/* =========================
-   UPLOAD
-========================= */
+/* UPLOAD */
 
 .upload{
   margin-top:20px;
@@ -294,10 +272,7 @@ input::placeholder{
   display:none;
 }
 
-
-/* =========================
-   PREVIEW
-========================= */
+/* PREVIEW */
 
 .preview{
   display:none;
@@ -315,10 +290,7 @@ input::placeholder{
   object-fit:contain;
 }
 
-
-/* =========================
-   NOTE
-========================= */
+/* NOTE */
 
 .note{
   text-align:center;
@@ -335,10 +307,7 @@ input::placeholder{
   font-weight:900;
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 button{
   font-family:inherit;
@@ -378,10 +347,7 @@ button{
     0 9px 22px rgba(0,0,0,.18);
 }
 
-
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 
 .modal{
   display:none;
@@ -441,10 +407,7 @@ button{
   font-weight:bold;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:520px){
 
@@ -496,16 +459,11 @@ button{
 </style>
 </head>
 
-
 <body>
 
 <div class="page">
 
-
-<!-- =========================
-     LOGO
-     الاسم داخل الدائرة
-========================= -->
+<!-- LOGO -->
 
 <div class="logo">
 
@@ -515,7 +473,6 @@ button{
   xmlns="http://www.w3.org/2000/svg"
 >
 
-  <!-- الدائرة -->
   <circle
     cx="250"
     cy="250"
@@ -525,7 +482,6 @@ button{
     stroke-width="8"
   />
 
-  <!-- العلامة الحمراء -->
   <circle
     cx="250"
     cy="175"
@@ -533,7 +489,6 @@ button{
     fill="#df3027"
   />
 
-  <!-- شكل العلامة -->
   <path
     d="M210 153
        Q250 130 291 153
@@ -563,7 +518,6 @@ button{
     transform="rotate(-12 250 220)"
   />
 
-  <!-- الاسم داخل الدائرة -->
   <text
     x="250"
     y="315"
@@ -582,12 +536,9 @@ button{
 </div>
 
 
-<!-- =========================
-     MAIN CARD
-========================= -->
+<!-- MAIN CARD -->
 
 <div class="card">
-
 
 <div class="icon-row">
 
@@ -658,7 +609,6 @@ button{
     ☁
   </div>
 
-
   <div class="upload-text">
 
     <div class="upload-title">
@@ -670,7 +620,6 @@ button{
     </div>
 
   </div>
-
 
   <div class="image-icon">
     🖼️
@@ -702,7 +651,7 @@ button{
 
 
 <div class="note">
-  يرجى استكمال البيانات وإرفاق الصورة هنا
+  هذه واجهة تجريبية — لا يتم طلب أي دفع حقيقي
 </div>
 
 
@@ -720,7 +669,6 @@ button{
   💳 متابعة
 </button>
 
-
 </div>
 
 
@@ -730,16 +678,14 @@ button{
   class="btn-black"
   id="withdrawBtn"
 >
-  🪙 سحب المكسب
+  🪙 عرض حالة المكسب
 </button>
 
 
 </div>
 
 
-<!-- =========================
-     MODAL
-========================= -->
+<!-- MODAL -->
 
 <div
   class="modal"
@@ -752,14 +698,11 @@ button{
     !
   </div>
 
-
   <h2>
-    لا يمكن المتابعة
+    واجهة تجريبية
   </h2>
 
-
   <p id="modalText"></p>
-
 
   <button
     class="close"
@@ -920,14 +863,14 @@ document
 
 
     showModal(
-      "تم استكمال البيانات بنجاح."
+      "تم استكمال البيانات بنجاح. هذه واجهة تجريبية فقط."
     );
 
   }
 );
 
 
-/* زر سحب المكسب */
+/* زر عرض الحالة */
 
 document
 .getElementById("withdrawBtn")
@@ -935,162 +878,12 @@ document
   "click",
   function(){
 
-    const number =
-      receiveNumber.value.trim();
-
-    const hasFile =
-      fileInput.files &&
-      fileInput.files.length > 0;
-
-
-    if(!number || !hasFile){
-
-      showModal(
-        "لا يمكن المتابعة. يرجى استكمال البيانات وإرفاق الصورة أولًا."
-      );
-
-      return;
-    }
-
-
     showModal(
-      "تم استكمال بيانات الواجهة. لا يتم تنفيذ تحويل أموال حقيقي من هذه الصفحة."
+      "هذه واجهة تجريبية ولا يتم تنفيذ أي تحويل أموال حقيقي."
     );
 
   }
 );
-
-</script>
-
-</body>
-</html>
-    return;
-  }
-
-  showModal(
-    "تم استكمال بيانات الواجهة. لا يتم تنفيذ تحويل أموال حقيقي من هذه الصفحة."
-  );
-
-}
-
-</script>
-
-</body>
-</html>
-
-      };
-
-    reader.readAsDataURL(file);
-
-  }
-);
-
-
-/* MODAL */
-
-function showModal(message){
-
-  document.getElementById(
-    "modalText"
-  ).innerText = message;
-
-  document.getElementById(
-    "modal"
-  ).style.display = "flex";
-
-}
-
-
-function closeModal(){
-
-  document.getElementById(
-    "modal"
-  ).style.display = "none";
-
-}
-
-
-function outsideClose(event){
-
-  if(event.target.id === "modal"){
-    closeModal();
-  }
-
-}
-
-
-/* RED BUTTON */
-
-function continueButton(){
-
-  const number =
-    document.getElementById(
-      "receiveNumber"
-    ).value.trim();
-
-  const file =
-    document.getElementById(
-      "fileInput"
-    ).files.length;
-
-
-  if(!number){
-
-    showModal(
-      "يرجى كتابة رقم الاستلام أولاً."
-    );
-
-    return;
-  }
-
-
-  if(!file){
-
-    showModal(
-      "يرجى إرفاق صورة الإثبات أولاً."
-    );
-
-    return;
-  }
-
-
-  showModal(
-    "تم استكمال البيانات بنجاح."
-  );
-
-}
-
-
-/* WITHDRAW BUTTON */
-
-function withdrawButton(){
-
-  const number =
-    document.getElementById(
-      "receiveNumber"
-    ).value.trim();
-
-  const file =
-    document.getElementById(
-      "fileInput"
-    ).files.length;
-
-
-  if(!number || !file){
-
-    showModal(
-      "لا يمكن المتابعة. يرجى استكمال البيانات وإرفاق الصورة أولًا."
-    );
-
-    return;
-  }
-
-
-  showModal(
-    "تم استكمال بيانات الواجهة. لا يتم تنفيذ تحويل أموال حقيقي من هذه الصفحة."
-  );
-
-}
 
 </script>
 
