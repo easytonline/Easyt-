@@ -1,548 +1,514 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>easy t.online</title>
 
 <style>
-
 *{
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    font-family:Arial,Tahoma,sans-serif;
-    background:
-        radial-gradient(circle at 5% 15%,rgba(255,50,50,.20),transparent 22%),
-        radial-gradient(circle at 95% 40%,rgba(255,50,50,.16),transparent 25%),
-        radial-gradient(circle at 10% 90%,rgba(255,50,50,.15),transparent 23%),
-        #fff;
-    color:#222;
-    min-height:100vh;
+  margin:0;
+  font-family:Arial,Tahoma,sans-serif;
+  background:
+    radial-gradient(circle at 0% 15%,rgba(255,0,0,.20),transparent 25%),
+    radial-gradient(circle at 100% 45%,rgba(255,0,0,.16),transparent 28%),
+    #fff;
+  color:#171717;
+  min-height:100vh;
+  padding:25px 15px 35px;
 }
 
-.page{
-    width:100%;
-    max-width:520px;
-    margin:auto;
-    padding:22px 16px 35px;
+.container{
+  width:100%;
+  max-width:650px;
+  margin:auto;
 }
-
-/* LOGO */
 
 .logo{
-    text-align:center;
-    margin:5px 0 20px;
+  text-align:center;
+  margin:5px 0 25px;
 }
 
-.logo h1{
-    margin:0;
-    font-size:48px;
-    font-weight:900;
-    letter-spacing:-2px;
-    color:#222;
+.logo-text{
+  font-size:55px;
+  font-weight:900;
+  font-style:italic;
+  letter-spacing:-4px;
 }
 
-.logo h1 span{
-    color:#d40000;
+.logo-text .red{
+  color:#d90000;
+}
+
+.logo-text .black{
+  color:#202020;
 }
 
 .logo-line{
-    width:190px;
-    height:6px;
-    background:#d40000;
-    border-radius:50%;
-    margin:3px auto 0;
-    transform:rotate(-3deg);
+  width:180px;
+  height:7px;
+  background:#d90000;
+  border-radius:100%;
+  margin:5px auto 0;
+  transform:rotate(-4deg);
 }
-
-/* MAIN CARD */
 
 .card{
-    position:relative;
-    overflow:hidden;
-    background:rgba(255,255,255,.94);
-    border:2px solid #e00000;
-    border-radius:30px;
-    padding:28px 20px 24px;
-    box-shadow:
-        0 15px 45px rgba(190,0,0,.13),
-        inset 0 0 30px rgba(255,0,0,.025);
+  background:rgba(255,255,255,.96);
+  border:2px solid #e00000;
+  border-radius:30px;
+  padding:30px 25px;
+  box-shadow:0 15px 45px rgba(0,0,0,.12);
 }
-
-/* TOP ICON */
 
 .icon{
-    width:70px;
-    height:70px;
-    margin:0 auto 18px;
-    border-radius:50%;
-    background:linear-gradient(145deg,#ff3030,#c90000);
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:32px;
-    box-shadow:0 8px 22px rgba(210,0,0,.25);
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ff3333,#c90000);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:35px;
+  margin:0 auto 20px;
+  box-shadow:0 8px 25px rgba(220,0,0,.25);
 }
 
-/* TITLE */
-
-.title{
-    text-align:center;
-    color:#c90000;
-    font-size:28px;
-    font-weight:900;
-    margin-bottom:7px;
+h1{
+  margin:0;
+  color:#c90000;
+  font-size:32px;
+  text-align:center;
 }
 
 .subtitle{
-    text-align:center;
-    font-size:17px;
-    color:#333;
-    margin-bottom:22px;
-}
-
-/* AMOUNT */
-
-.amount-box{
-    background:linear-gradient(
-        135deg,
-        #fff1f1,
-        #ffe4e4
-    );
-    border:1px solid #ffcaca;
-    border-radius:25px;
-    padding:20px 12px;
-    text-align:center;
-    margin-bottom:24px;
-    box-shadow:0 8px 22px rgba(200,0,0,.08);
-}
-
-.amount-title{
-    font-size:18px;
-    margin-bottom:6px;
+  text-align:center;
+  font-size:22px;
+  margin:10px 0 25px;
 }
 
 .amount{
-    font-size:48px;
-    font-weight:900;
-    color:#c90000;
+  background:linear-gradient(135deg,#fff0f0,#fff);
+  border:2px solid #ffc4c4;
+  border-radius:25px;
+  padding:20px;
+  text-align:center;
+  margin-bottom:25px;
 }
 
-/* LABEL */
-
-.field-label{
-    display:block;
-    text-align:right;
-    font-size:18px;
-    font-weight:800;
-    margin:0 5px 9px;
+.amount-title{
+  font-size:21px;
+  font-weight:bold;
 }
 
-/* INPUT */
-
-.receive-number{
-    width:100%;
-    height:58px;
-    border:1px solid #ddd;
-    border-radius:18px;
-    background:#fff;
-    padding:0 18px;
-    font-size:17px;
-    outline:none;
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.05),
-        inset 0 1px 3px rgba(0,0,0,.03);
-    margin-bottom:18px;
+.amount-value{
+  font-size:58px;
+  font-weight:900;
+  color:#d00000;
+  margin-top:5px;
 }
 
-.receive-number:focus{
-    border-color:#e00000;
-    box-shadow:0 0 0 3px rgba(224,0,0,.08);
+label{
+  display:block;
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:10px;
 }
 
-/* UPLOAD */
-
-.upload-box{
-    border:2px dashed #ccc;
-    border-radius:22px;
-    padding:22px 15px;
-    text-align:center;
-    background:#fff;
-    margin-bottom:14px;
-    transition:.2s;
+input[type="text"]{
+  width:100%;
+  height:65px;
+  border:2px solid #ddd;
+  border-radius:18px;
+  padding:0 20px;
+  font-size:20px;
+  outline:none;
+  text-align:right;
+  transition:.2s;
 }
 
-.upload-box:hover{
-    border-color:#e00000;
+input[type="text"]:focus{
+  border-color:#d80000;
+  box-shadow:0 0 0 4px rgba(216,0,0,.08);
+}
+
+.upload{
+  margin-top:20px;
+  min-height:150px;
+  border:2px dashed #bbb;
+  border-radius:22px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.2s;
+  padding:20px;
+}
+
+.upload:hover{
+  border-color:#d80000;
+  background:#fff8f8;
 }
 
 .upload-icon{
-    font-size:42px;
-    color:#d00000;
-    margin-bottom:8px;
+  font-size:45px;
+  color:#d00000;
 }
 
 .upload-title{
-    font-size:19px;
-    font-weight:bold;
+  font-size:21px;
+  font-weight:bold;
+  margin-top:8px;
 }
 
 .upload-sub{
-    color:#999;
-    font-size:14px;
-    margin-top:5px;
+  color:#999;
+  margin-top:5px;
 }
 
-.file-input{
-    width:100%;
-    margin-top:14px;
-    font-size:14px;
+#fileInput{
+  display:none;
 }
 
-/* PREVIEW */
-
-.preview-box{
-    display:none;
-    background:#fafafa;
-    border:1px solid #eee;
-    border-radius:20px;
-    padding:10px;
-    margin-bottom:16px;
+.preview{
+  display:none;
+  margin-top:15px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid #ddd;
 }
 
-.preview-box img{
-    display:block;
-    width:100%;
-    max-height:250px;
-    object-fit:contain;
-    border-radius:14px;
+.preview img{
+  width:100%;
+  max-height:280px;
+  object-fit:contain;
+  display:block;
 }
-
-/* NOTE */
 
 .note{
-    text-align:center;
-    font-size:17px;
-    font-weight:bold;
-    margin:15px 0 5px;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  margin:20px 0 10px;
 }
 
 .arrow{
-    text-align:center;
-    color:#d00000;
+  text-align:center;
+  color:#e00000;
+  font-size:35px;
+  margin-bottom:8px;
+}
+
+button{
+  width:100%;
+  border:none;
+  border-radius:20px;
+  height:65px;
+  font-size:23px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:active{
+  transform:scale(.98);
+}
+
+.btn-pay{
+  background:linear-gradient(135deg,#ff2222,#c90000);
+  color:white;
+  box-shadow:0 8px 20px rgba(200,0,0,.22);
+}
+
+.withdraw{
+  margin-top:20px;
+  background:linear-gradient(135deg,#333,#111);
+  color:white;
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+/* نافذة الرسالة */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-box{
+  width:100%;
+  max-width:420px;
+  background:white;
+  border-radius:25px;
+  padding:30px 25px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  animation:pop .2s ease;
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.85);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.warning{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#fff0f0;
+  color:#d00000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:35px;
+  margin:0 auto 15px;
+}
+
+.modal-box h2{
+  margin:5px 0 10px;
+  color:#c90000;
+}
+
+.modal-box p{
+  font-size:19px;
+  line-height:1.7;
+  margin:0 0 20px;
+}
+
+.close{
+  background:#111;
+  color:white;
+  height:55px;
+  font-size:19px;
+}
+
+@media(max-width:500px){
+  .logo-text{
     font-size:43px;
-    line-height:45px;
-    animation:bounce 1.2s infinite;
+  }
+
+  h1{
+    font-size:27px;
+  }
+
+  .subtitle{
+    font-size:19px;
+  }
+
+  .amount-value{
+    font-size:48px;
+  }
+
+  .card{
+    padding:25px 17px;
+  }
 }
-
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(8px);
-    }
-}
-
-/* RED BUTTON */
-
-.pay-btn{
-    width:100%;
-    height:62px;
-    border:0;
-    border-radius:20px;
-    background:linear-gradient(
-        135deg,
-        #ff2525,
-        #c90000
-    );
-    color:#fff;
-    font-size:21px;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow:
-        0 9px 24px rgba(200,0,0,.25);
-    transition:.2s;
-}
-
-.pay-btn:active{
-    transform:scale(.98);
-}
-
-/* BLACK BUTTON */
-
-.withdraw-btn{
-    width:100%;
-    height:62px;
-    margin-top:20px;
-    border:0;
-    border-radius:20px;
-    background:linear-gradient(
-        135deg,
-        #333,
-        #111
-    );
-    color:#fff;
-    font-size:21px;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow:0 9px 24px rgba(0,0,0,.18);
-}
-
-/* DEMO */
-
-.demo{
-    text-align:center;
-    color:#c90000;
-    background:#fff0f0;
-    border-radius:15px;
-    padding:9px;
-    margin-top:18px;
-    font-size:13px;
-    font-weight:bold;
-}
-
-/* MOBILE */
-
-@media(max-width:400px){
-
-    .logo h1{
-        font-size:40px;
-    }
-
-    .title{
-        font-size:24px;
-    }
-
-    .amount{
-        font-size:42px;
-    }
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="page">
+<div class="container">
 
-    <!-- LOGO -->
+  <div class="logo">
+    <div class="logo-text">
+      <span class="red">easy t</span><span class="black">.online</span>
+    </div>
+    <div class="logo-line"></div>
+  </div>
 
-    <div class="logo">
+  <div class="card">
 
-        <h1>
-            easy <span>t</span>.online
-        </h1>
+    <div class="icon">▣</div>
 
-        <div class="logo-line"></div>
+    <h1>فاضل بس خطوة</h1>
+    <div class="subtitle">دي آخر مرحلة للاستلام</div>
 
+    <div class="amount">
+      <div class="amount-title">المبلغ المطلوب:</div>
+      <div class="amount-value">1420 ج</div>
     </div>
 
+    <label>رقم الاستلام</label>
 
-    <!-- MAIN CARD -->
-
-    <div class="card">
-
-        <div class="icon">
-            💳
-        </div>
-
-
-        <div class="title">
-            فاضل بس خطوة التجربة
-        </div>
-
-
-        <div class="subtitle">
-            دي آخر مرحلة للاستلام التجريبي
-        </div>
-
-
-        <!-- AMOUNT -->
-
-        <div class="amount-box">
-
-            <div class="amount-title">
-                المبلغ التجريبي:
-            </div>
-
-            <div class="amount">
-                1420 ج
-            </div>
-
-        </div>
-
-
-        <!-- RECEIVE NUMBER -->
-
-        <label class="field-label">
-            👤 رقم الاستلام
-        </label>
-
-        <input
-            id="receiveNumber"
-            class="receive-number"
-            type="tel"
-            inputmode="numeric"
-            placeholder="اكتب رقم الاستلام"
-        >
-
-
-        <!-- UPLOAD -->
-
-        <div class="upload-box">
-
-            <div class="upload-icon">
-                ☁️
-            </div>
-
-            <div class="upload-title">
-                إرفاق صورة تجريبية
-            </div>
-
-            <div class="upload-sub">
-                اختر صورة من المعرض
-            </div>
-
-            <input
-                id="fileInput"
-                class="file-input"
-                type="file"
-                accept="image/*"
-            >
-
-        </div>
-
-
-        <!-- PREVIEW -->
-
-        <div
-            id="previewBox"
-            class="preview-box"
-        >
-
-            <img id="preview">
-
-        </div>
-
-
-        <div class="note">
-            يرجى إكمال الخطوة التجريبية وإرفاق الاسكرين هنا
-        </div>
-
-
-        <div class="arrow">
-            ⬇️
-        </div>
-
-
-        <!-- BUTTON -->
-
-        <button
-            class="pay-btn"
-            onclick="demoPayment()"
-        >
-            💳 دفع الضريبة التجريبية
-        </button>
-
-    </div>
-
-
-    <!-- WITHDRAW -->
-
-    <button
-        class="withdraw-btn"
-        onclick="demoWithdraw()"
+    <input
+      type="text"
+      id="receiveNumber"
+      placeholder="اكتب رقم الاستلام"
     >
-        🪙 سحب المكسب
+
+    <div class="upload" onclick="document.getElementById('fileInput').click()">
+
+      <div class="upload-icon">☁️</div>
+
+      <div class="upload-title">
+        إرفاق صورة الإثبات
+      </div>
+
+      <div class="upload-sub">
+        اختر صورة من المعرض
+      </div>
+
+    </div>
+
+    <input
+      type="file"
+      id="fileInput"
+      accept="image/*"
+    >
+
+    <div class="preview" id="previewBox">
+      <img id="preview">
+    </div>
+
+    <div class="note">
+      يرجى استكمال البيانات وإرفاق الصورة هنا
+    </div>
+
+    <div class="arrow">⌄</div>
+
+    <button class="btn-pay" onclick="payButton()">
+      💳 متابعة
     </button>
 
+  </div>
 
-    <div class="demo">
-        DEMO • هذه الصفحة للتجربة والعرض فقط
-    </div>
+  <button class="withdraw" onclick="withdrawButton()">
+    🪙 سحب المكسب
+  </button>
+
+</div>
+
+
+<!-- نافذة التنبيه -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <div class="warning">!</div>
+
+    <h2>لا يمكن المتابعة</h2>
+
+    <p id="modalText">
+      يرجى استكمال البيانات وإرفاق الصورة أولًا.
+    </p>
+
+    <button class="close" onclick="closeModal()">
+      حسناً
+    </button>
+
+  </div>
 
 </div>
 
 
 <script>
 
-const fileInput =
-document.getElementById("fileInput");
+const fileInput = document.getElementById("fileInput");
+const previewBox = document.getElementById("previewBox");
+const preview = document.getElementById("preview");
 
-const previewBox =
-document.getElementById("previewBox");
+fileInput.addEventListener("change", function(){
 
-const preview =
-document.getElementById("preview");
+  const file = this.files[0];
 
+  if(file){
 
-fileInput.addEventListener(
-    "change",
-    function(){
+    const reader = new FileReader();
 
-        const file = this.files[0];
+    reader.onload = function(e){
 
-        if(!file){
-            return;
-        }
+      preview.src = e.target.result;
+      previewBox.style.display = "block";
 
-        const reader =
-        new FileReader();
+    };
 
-        reader.onload =
-        function(e){
+    reader.readAsDataURL(file);
+  }
 
-            preview.src =
-            e.target.result;
-
-            previewBox.style.display =
-            "block";
-
-        };
-
-        reader.readAsDataURL(file);
-
-    }
-);
+});
 
 
-function demoPayment(){
+function showModal(message){
 
-    const number =
-    document.getElementById(
-        "receiveNumber"
-    ).value.trim();
+  document.getElementById("modalText").innerText = message;
 
-    if(number === ""){
-
-        alert(
-            "يرجى كتابة رقم الاستلام أولاً."
-        );
-
-        return;
-    }
-
-    alert(
-        "يرجى إكمال الخطوة التجريبية أولاً للمتابعة."
-    );
+  document.getElementById("modal").style.display = "flex";
 
 }
 
 
-function demoWithdraw(){
+function closeModal(){
 
-    alert(
-        "هذه واجهة Demo ولا توجد عملية سحب أو تحويل أموال حقيقية."
+  document.getElementById("modal").style.display = "none";
+
+}
+
+
+function payButton(){
+
+  const number =
+    document.getElementById("receiveNumber").value.trim();
+
+  const file =
+    document.getElementById("fileInput").files.length;
+
+  if(!number){
+
+    showModal("يرجى كتابة رقم الاستلام أولاً.");
+
+    return;
+  }
+
+  if(!file){
+
+    showModal("يرجى إرفاق صورة الإثبات أولاً.");
+
+    return;
+  }
+
+  showModal("تم استكمال البيانات بنجاح.");
+
+}
+
+
+function withdrawButton(){
+
+  const number =
+    document.getElementById("receiveNumber").value.trim();
+
+  const file =
+    document.getElementById("fileInput").files.length;
+
+  if(!number || !file){
+
+    showModal(
+      "لا يمكن المتابعة. يرجى استكمال البيانات وإرفاق الصورة أولًا."
     );
+
+    return;
+  }
+
+  showModal(
+    "تم استكمال بيانات الواجهة.  يتم تنفيذ تحويل أموال حقيقيه من هذه الصفحة."
+  );
 
 }
 
