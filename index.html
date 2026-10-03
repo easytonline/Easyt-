@@ -1,149 +1,243 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>easy t.online</title>
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#ffffff;
+    font-family:Arial,Tahoma,sans-serif;
+    background:
+        radial-gradient(circle at 5% 15%,rgba(255,50,50,.20),transparent 22%),
+        radial-gradient(circle at 95% 40%,rgba(255,50,50,.16),transparent 25%),
+        radial-gradient(circle at 10% 90%,rgba(255,50,50,.15),transparent 23%),
+        #fff;
     color:#222;
+    min-height:100vh;
+}
+
+.page{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+    padding:22px 16px 35px;
+}
+
+/* LOGO */
+
+.logo{
     text-align:center;
-    padding:20px;
+    margin:5px 0 20px;
+}
+
+.logo h1{
+    margin:0;
+    font-size:48px;
+    font-weight:900;
+    letter-spacing:-2px;
+    color:#222;
+}
+
+.logo h1 span{
+    color:#d40000;
+}
+
+.logo-line{
+    width:190px;
+    height:6px;
+    background:#d40000;
+    border-radius:50%;
+    margin:3px auto 0;
+    transform:rotate(-3deg);
+}
+
+/* MAIN CARD */
+
+.card{
     position:relative;
     overflow:hidden;
+    background:rgba(255,255,255,.94);
+    border:2px solid #e00000;
+    border-radius:30px;
+    padding:28px 20px 24px;
+    box-shadow:
+        0 15px 45px rgba(190,0,0,.13),
+        inset 0 0 30px rgba(255,0,0,.025);
 }
 
-/* كرات حمراء ضبابية */
+/* TOP ICON */
 
-.circle{
-    position:absolute;
-    width:220px;
-    height:220px;
-    background:rgba(255,0,0,0.25);
+.icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 18px;
     border-radius:50%;
-    filter:blur(35px);
-    animation:float 6s infinite ease-in-out;
+    background:linear-gradient(145deg,#ff3030,#c90000);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    box-shadow:0 8px 22px rgba(210,0,0,.25);
 }
 
-.c1{
-    top:10%;
-    left:15%;
-}
+/* TITLE */
 
-.c2{
-    top:50%;
-    left:70%;
-    animation-delay:1.5s;
-}
-
-.c3{
-    top:75%;
-    left:20%;
-    animation-delay:3s;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-25px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-}
-
-/* كلمة easy t.online كبيرة ومتحركة */
-
-h1{
-    font-size:60px;
-    font-weight:900;
-    margin-top:10px;
-    letter-spacing:4px;
-    color:#d40000;
-    animation:move 3s infinite ease-in-out;
-}
-
-@keyframes move{
-    0%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.08);
-    }
-    100%{
-        transform:scale(1);
-    }
-}
-
-.box{
-    background:rgba(255,255,255,0.90);
-    padding:20px;
-    border-radius:14px;
-    max-width:420px;
-    margin:20px auto;
-    box-shadow:0 0 25px rgba(0,0,0,0.15);
-    border:1px solid rgba(200,0,0,0.15);
-    backdrop-filter:blur(4px);
-}
-
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    margin-top:12px;
-    font-size:18px;
-    cursor:pointer;
-}
-
-.btn-pay{
-    background:#e00000;
-    color:white;
-}
-
-.btn-withdraw{
-    background:#222;
-    color:white;
-}
-
-input[type=file]{
-    width:100%;
-    margin-top:10px;
-    padding:10px;
-    background:white;
-    border-radius:10px;
-    box-sizing:border-box;
-    border:1px solid #ddd;
-}
-
-input[type=text]{
-    width:100%;
-    margin-top:10px;
-    padding:12px;
-    background:white;
-    border-radius:10px;
-    box-sizing:border-box;
-    border:1px solid #ddd;
-    font-size:16px;
+.title{
     text-align:center;
+    color:#c90000;
+    font-size:28px;
+    font-weight:900;
+    margin-bottom:7px;
 }
 
-img{
-    max-width:100%;
-    margin-top:10px;
-    border-radius:8px;
+.subtitle{
+    text-align:center;
+    font-size:17px;
+    color:#333;
+    margin-bottom:22px;
+}
+
+/* AMOUNT */
+
+.amount-box{
+    background:linear-gradient(
+        135deg,
+        #fff1f1,
+        #ffe4e4
+    );
+    border:1px solid #ffcaca;
+    border-radius:25px;
+    padding:20px 12px;
+    text-align:center;
+    margin-bottom:24px;
+    box-shadow:0 8px 22px rgba(200,0,0,.08);
+}
+
+.amount-title{
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.amount{
+    font-size:48px;
+    font-weight:900;
+    color:#c90000;
+}
+
+/* LABEL */
+
+.field-label{
+    display:block;
+    text-align:right;
+    font-size:18px;
+    font-weight:800;
+    margin:0 5px 9px;
+}
+
+/* INPUT */
+
+.receive-number{
+    width:100%;
+    height:58px;
+    border:1px solid #ddd;
+    border-radius:18px;
+    background:#fff;
+    padding:0 18px;
+    font-size:17px;
+    outline:none;
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.05),
+        inset 0 1px 3px rgba(0,0,0,.03);
+    margin-bottom:18px;
+}
+
+.receive-number:focus{
+    border-color:#e00000;
+    box-shadow:0 0 0 3px rgba(224,0,0,.08);
+}
+
+/* UPLOAD */
+
+.upload-box{
+    border:2px dashed #ccc;
+    border-radius:22px;
+    padding:22px 15px;
+    text-align:center;
+    background:#fff;
+    margin-bottom:14px;
+    transition:.2s;
+}
+
+.upload-box:hover{
+    border-color:#e00000;
+}
+
+.upload-icon{
+    font-size:42px;
+    color:#d00000;
+    margin-bottom:8px;
+}
+
+.upload-title{
+    font-size:19px;
+    font-weight:bold;
+}
+
+.upload-sub{
+    color:#999;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.file-input{
+    width:100%;
+    margin-top:14px;
+    font-size:14px;
+}
+
+/* PREVIEW */
+
+.preview-box{
+    display:none;
+    background:#fafafa;
+    border:1px solid #eee;
+    border-radius:20px;
+    padding:10px;
+    margin-bottom:16px;
+}
+
+.preview-box img{
+    display:block;
+    width:100%;
+    max-height:250px;
+    object-fit:contain;
+    border-radius:14px;
+}
+
+/* NOTE */
+
+.note{
+    text-align:center;
+    font-size:17px;
+    font-weight:bold;
+    margin:15px 0 5px;
 }
 
 .arrow{
-    font-size:40px;
-    margin-top:5px;
+    text-align:center;
+    color:#d00000;
+    font-size:43px;
+    line-height:45px;
     animation:bounce 1.2s infinite;
 }
 
@@ -151,130 +245,255 @@ img{
     0%,100%{
         transform:translateY(0);
     }
+
     50%{
-        transform:translateY(-10px);
+        transform:translateY(8px);
     }
 }
 
-</style>
+/* RED BUTTON */
 
+.pay-btn{
+    width:100%;
+    height:62px;
+    border:0;
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        #ff2525,
+        #c90000
+    );
+    color:#fff;
+    font-size:21px;
+    font-weight:900;
+    cursor:pointer;
+    box-shadow:
+        0 9px 24px rgba(200,0,0,.25);
+    transition:.2s;
+}
+
+.pay-btn:active{
+    transform:scale(.98);
+}
+
+/* BLACK BUTTON */
+
+.withdraw-btn{
+    width:100%;
+    height:62px;
+    margin-top:20px;
+    border:0;
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        #333,
+        #111
+    );
+    color:#fff;
+    font-size:21px;
+    font-weight:900;
+    cursor:pointer;
+    box-shadow:0 9px 24px rgba(0,0,0,.18);
+}
+
+/* DEMO */
+
+.demo{
+    text-align:center;
+    color:#c90000;
+    background:#fff0f0;
+    border-radius:15px;
+    padding:9px;
+    margin-top:18px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:400px){
+
+    .logo h1{
+        font-size:40px;
+    }
+
+    .title{
+        font-size:24px;
+    }
+
+    .amount{
+        font-size:42px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- كرات ضبابية -->
+<div class="page">
 
-<div class="circle c1"></div>
-<div class="circle c2"></div>
-<div class="circle c3"></div>
+    <!-- LOGO -->
 
+    <div class="logo">
 
-<h1>easy t.online</h1>
+        <h1>
+            easy <span>t</span>.online
+        </h1>
 
+        <div class="logo-line"></div>
 
-<div class="box">
-
-<h3>
-فاضل بس ضريبة القيمة المضافة
-</h3>
-
-<p>
-دي آخر مرحلة للاستلام الفوري
-</p>
-
-<h2>
-الضريبة المطلوبة:
-<strong>1420 ج</strong>
-</h2>
+    </div>
 
 
-<!-- رقم الاستلام -->
+    <!-- MAIN CARD -->
 
-<label
-style="
-display:block;
-margin-top:15px;
-font-size:17px;
-font-weight:bold;
-">
+    <div class="card">
 
-رقم الاستلام
-
-</label>
-
-<input
-type="text"
-id="receiveNumber"
-placeholder="اكتب رقم الاستلام"
->
+        <div class="icon">
+            💳
+        </div>
 
 
-<input
-type="file"
-id="fileInput"
->
-
-<img
-id="preview"
-style="display:none"
->
+        <div class="title">
+            فاضل بس خطوة التجربة
+        </div>
 
 
-<p
-style="
-margin-top:10px;
-font-size:17px;
-">
-
-يرجى دفع الضريبة وإرفاق الاسكرين هنا
-
-</p>
+        <div class="subtitle">
+            دي آخر مرحلة للاستلام التجريبي
+        </div>
 
 
-<div class="arrow">
-⬇️
+        <!-- AMOUNT -->
+
+        <div class="amount-box">
+
+            <div class="amount-title">
+                المبلغ التجريبي:
+            </div>
+
+            <div class="amount">
+                1420 ج
+            </div>
+
+        </div>
+
+
+        <!-- RECEIVE NUMBER -->
+
+        <label class="field-label">
+            👤 رقم الاستلام
+        </label>
+
+        <input
+            id="receiveNumber"
+            class="receive-number"
+            type="tel"
+            inputmode="numeric"
+            placeholder="اكتب رقم الاستلام"
+        >
+
+
+        <!-- UPLOAD -->
+
+        <div class="upload-box">
+
+            <div class="upload-icon">
+                ☁️
+            </div>
+
+            <div class="upload-title">
+                إرفاق صورة تجريبية
+            </div>
+
+            <div class="upload-sub">
+                اختر صورة من المعرض
+            </div>
+
+            <input
+                id="fileInput"
+                class="file-input"
+                type="file"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <!-- PREVIEW -->
+
+        <div
+            id="previewBox"
+            class="preview-box"
+        >
+
+            <img id="preview">
+
+        </div>
+
+
+        <div class="note">
+            يرجى إكمال الخطوة التجريبية وإرفاق الاسكرين هنا
+        </div>
+
+
+        <div class="arrow">
+            ⬇️
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            class="pay-btn"
+            onclick="demoPayment()"
+        >
+            💳 دفع الضريبة التجريبية
+        </button>
+
+    </div>
+
+
+    <!-- WITHDRAW -->
+
+    <button
+        class="withdraw-btn"
+        onclick="demoWithdraw()"
+    >
+        🪙 سحب المكسب
+    </button>
+
+
+    <div class="demo">
+        DEMO • هذه الصفحة للتجربة والعرض فقط
+    </div>
+
 </div>
-
-
-<button
-class="btn-pay"
-onclick="demoPay()"
->
-
-دفع الضريبة
-
-</button>
-
-</div>
-
-
-<button
-class="btn-withdraw"
-onclick="demoWithdraw()"
->
-
-سحب المكسب
-
-</button>
 
 
 <script>
 
-// عرض الصورة المرفوعة
-
 const fileInput =
 document.getElementById("fileInput");
+
+const previewBox =
+document.getElementById("previewBox");
 
 const preview =
 document.getElementById("preview");
 
+
 fileInput.addEventListener(
-"change",
-function(){
+    "change",
+    function(){
 
-    const file = this.files[0];
+        const file = this.files[0];
 
-    if(file){
+        if(!file){
+            return;
+        }
 
         const reader =
         new FileReader();
@@ -285,34 +504,44 @@ function(){
             preview.src =
             e.target.result;
 
-            preview.style.display =
+            previewBox.style.display =
             "block";
 
         };
 
         reader.readAsDataURL(file);
+
+    }
+);
+
+
+function demoPayment(){
+
+    const number =
+    document.getElementById(
+        "receiveNumber"
+    ).value.trim();
+
+    if(number === ""){
+
+        alert(
+            "يرجى كتابة رقم الاستلام أولاً."
+        );
+
+        return;
     }
 
-});
-
-
-// زر دفع تجريبي
-
-function demoPay(){
-
     alert(
-        "   يرجي سداد الضريبه اولا ليتم تحويل الارباح لحضرتك."
+        "يرجى إكمال الخطوة التجريبية أولاً للمتابعة."
     );
 
 }
 
 
-// زر سحب تجريبي
-
 function demoWithdraw(){
 
     alert(
-        "  يرجي سداد الضريبه اولا ليتم تحويل الارباح"
+        "هذه واجهة Demo ولا توجد عملية سحب أو تحويل أموال حقيقية."
     );
 
 }
