@@ -10,253 +10,380 @@
   box-sizing:border-box;
 }
 
-body{
+html,body{
   margin:0;
-  font-family:Arial,Tahoma,sans-serif;
-  background:
-    radial-gradient(circle at 0% 15%,rgba(255,0,0,.20),transparent 25%),
-    radial-gradient(circle at 100% 45%,rgba(255,0,0,.16),transparent 28%),
-    #fff;
-  color:#171717;
-  min-height:100vh;
-  padding:25px 15px 35px;
+  min-height:100%;
 }
 
-.container{
+body{
+  font-family:Arial,Tahoma,sans-serif;
+  background:
+    radial-gradient(circle at -5% 8%,rgba(255,0,0,.28),transparent 23%),
+    radial-gradient(circle at 105% 42%,rgba(255,0,0,.22),transparent 25%),
+    radial-gradient(circle at 100% 92%,rgba(255,0,0,.20),transparent 22%),
+    #fff;
+  color:#111;
+  padding:20px 14px 30px;
+  overflow-x:hidden;
+}
+
+.page{
   width:100%;
-  max-width:650px;
+  max-width:760px;
   margin:auto;
 }
 
+/* LOGO */
 .logo{
   text-align:center;
-  margin:5px 0 25px;
+  margin:5px auto 24px;
+  position:relative;
 }
 
 .logo-text{
-  font-size:55px;
+  display:inline-block;
+  font-size:clamp(45px,10vw,78px);
+  line-height:1;
   font-weight:900;
   font-style:italic;
-  letter-spacing:-4px;
+  letter-spacing:-5px;
+  text-shadow:3px 4px 4px rgba(0,0,0,.18);
 }
 
-.logo-text .red{
+.logo-red{
   color:#d90000;
 }
 
-.logo-text .black{
-  color:#202020;
+.logo-black{
+  color:#171717;
 }
 
-.logo-line{
-  width:180px;
-  height:7px;
+.logo-swoosh{
+  width:52%;
+  max-width:390px;
+  height:10px;
   background:#d90000;
   border-radius:100%;
   margin:5px auto 0;
-  transform:rotate(-4deg);
+  transform:rotate(-5deg);
+  box-shadow:0 4px 4px rgba(180,0,0,.15);
 }
 
+/* MAIN CARD */
 .card{
   background:rgba(255,255,255,.96);
   border:2px solid #e00000;
-  border-radius:30px;
-  padding:30px 25px;
-  box-shadow:0 15px 45px rgba(0,0,0,.12);
+  border-radius:38px;
+  padding:28px 38px 25px;
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.10),
+    0 0 35px rgba(255,0,0,.08);
 }
 
-.icon{
-  width:70px;
-  height:70px;
-  border-radius:50%;
-  background:linear-gradient(145deg,#ff3333,#c90000);
-  color:white;
+/* TOP ICON */
+.icon-row{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:35px;
-  margin:0 auto 20px;
-  box-shadow:0 8px 25px rgba(220,0,0,.25);
+  gap:14px;
+  margin-bottom:20px;
 }
 
-h1{
+.line{
+  height:5px;
+  width:115px;
+  border-radius:20px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #ffd4d4
+  );
+}
+
+.line.right{
+  transform:scaleX(-1);
+}
+
+.icon{
+  width:75px;
+  height:75px;
+  flex:none;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ff3333,#c80000);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:37px;
+  font-weight:bold;
+  box-shadow:
+    0 8px 22px rgba(200,0,0,.25),
+    0 0 0 12px rgba(255,70,70,.08);
+}
+
+/* TITLES */
+.main-title{
+  text-align:center;
+  color:#cf0000;
+  font-size:clamp(27px,5vw,42px);
+  font-weight:900;
   margin:0;
-  color:#c90000;
-  font-size:32px;
-  text-align:center;
+  line-height:1.3;
 }
 
-.subtitle{
+.sub-title{
   text-align:center;
-  font-size:22px;
-  margin:10px 0 25px;
+  font-size:clamp(20px,4vw,29px);
+  margin:8px 0 26px;
+}
+
+/* AMOUNT */
+.amount-box{
+  background:linear-gradient(
+    135deg,
+    #fff5f5,
+    #ffe1e1
+  );
+  border:2px solid #ffbaba;
+  border-radius:28px;
+  padding:17px 20px 20px;
+  text-align:center;
+  box-shadow:
+    inset 0 2px 10px rgba(255,0,0,.05);
+}
+
+.amount-label{
+  font-size:23px;
+  font-weight:bold;
 }
 
 .amount{
-  background:linear-gradient(135deg,#fff0f0,#fff);
-  border:2px solid #ffc4c4;
-  border-radius:25px;
-  padding:20px;
-  text-align:center;
-  margin-bottom:25px;
-}
-
-.amount-title{
-  font-size:21px;
-  font-weight:bold;
-}
-
-.amount-value{
-  font-size:58px;
+  direction:ltr;
+  font-size:clamp(48px,9vw,76px);
   font-weight:900;
   color:#d00000;
-  margin-top:5px;
+  line-height:1;
+  margin-top:7px;
 }
 
-label{
-  display:block;
-  font-size:21px;
-  font-weight:bold;
-  margin-bottom:10px;
+/* RECEIPT */
+.field-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:23px;
+  font-weight:900;
+  margin:25px 5px 10px;
+}
+
+.person-icon{
+  width:32px;
+  height:32px;
+  position:relative;
+}
+
+.person-icon:before{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  border:3px solid #111;
+  border-radius:50%;
+  left:7px;
+  top:0;
+}
+
+.person-icon:after{
+  content:"";
+  position:absolute;
+  width:24px;
+  height:12px;
+  border:3px solid #111;
+  border-radius:15px 15px 0 0;
+  border-bottom:0;
+  left:1px;
+  bottom:2px;
 }
 
 input[type="text"]{
   width:100%;
-  height:65px;
+  height:68px;
   border:2px solid #ddd;
-  border-radius:18px;
-  padding:0 20px;
-  font-size:20px;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:
+    inset 0 3px 8px rgba(0,0,0,.06);
   outline:none;
-  text-align:right;
-  transition:.2s;
+  padding:0 22px;
+  font-size:21px;
+  font-family:inherit;
 }
 
 input[type="text"]:focus{
-  border-color:#d80000;
-  box-shadow:0 0 0 4px rgba(216,0,0,.08);
+  border-color:#e00000;
+  box-shadow:
+    0 0 0 4px rgba(220,0,0,.07),
+    inset 0 3px 8px rgba(0,0,0,.04);
 }
 
+input::placeholder{
+  color:#aaa;
+}
+
+/* UPLOAD */
 .upload{
   margin-top:20px;
-  min-height:150px;
+  min-height:155px;
   border:2px dashed #bbb;
-  border-radius:22px;
+  border-radius:23px;
+  background:#fff;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
+  gap:25px;
   cursor:pointer;
   transition:.2s;
-  padding:20px;
 }
 
 .upload:hover{
-  border-color:#d80000;
-  background:#fff8f8;
+  border-color:#d90000;
+  background:#fffafa;
 }
 
 .upload-icon{
-  font-size:45px;
+  font-size:50px;
   color:#d00000;
 }
 
+.upload-text{
+  text-align:center;
+}
+
 .upload-title{
-  font-size:21px;
+  font-size:23px;
   font-weight:bold;
-  margin-top:8px;
 }
 
 .upload-sub{
   color:#999;
+  font-size:18px;
   margin-top:5px;
+}
+
+.image-icon{
+  width:75px;
+  height:75px;
+  border-radius:18px;
+  background:#f8f8f8;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
 }
 
 #fileInput{
   display:none;
 }
 
+/* PREVIEW */
 .preview{
   display:none;
-  margin-top:15px;
-  border-radius:18px;
+  margin-top:16px;
+  height:145px;
+  border-radius:22px;
+  background:#fafafa;
+  border:1px solid #e5e5e5;
   overflow:hidden;
-  border:1px solid #ddd;
+  box-shadow:inset 0 3px 10px rgba(0,0,0,.04);
 }
 
 .preview img{
   width:100%;
-  max-height:280px;
+  height:100%;
   object-fit:contain;
-  display:block;
 }
 
+/* NOTE */
 .note{
   text-align:center;
-  font-size:18px;
+  font-size:20px;
   font-weight:bold;
-  margin:20px 0 10px;
+  margin:19px 0 4px;
 }
 
 .arrow{
   text-align:center;
   color:#e00000;
-  font-size:35px;
-  margin-bottom:8px;
-}
-
-button{
-  width:100%;
-  border:none;
-  border-radius:20px;
-  height:65px;
-  font-size:23px;
+  font-size:43px;
+  line-height:30px;
   font-weight:bold;
+}
+
+/* BUTTONS */
+.btn{
+  width:100%;
+  height:70px;
+  border:0;
+  border-radius:22px;
+  font-family:inherit;
+  font-size:26px;
+  font-weight:900;
   cursor:pointer;
-  transition:.2s;
+  transition:.15s;
 }
 
-button:active{
-  transform:scale(.98);
+.btn:active{
+  transform:scale(.985);
 }
 
-.btn-pay{
-  background:linear-gradient(135deg,#ff2222,#c90000);
-  color:white;
-  box-shadow:0 8px 20px rgba(200,0,0,.22);
+.btn-red{
+  background:linear-gradient(
+    135deg,
+    #ff2525,
+    #cf0000
+  );
+  color:#fff;
+  box-shadow:
+    0 9px 20px rgba(205,0,0,.22);
 }
 
-.withdraw{
+.btn-black{
   margin-top:20px;
-  background:linear-gradient(135deg,#333,#111);
-  color:white;
-  box-shadow:0 8px 20px rgba(0,0,0,.18);
+  background:linear-gradient(
+    135deg,
+    #333,
+    #111
+  );
+  color:#fff;
+  box-shadow:
+    0 9px 20px rgba(0,0,0,.18);
 }
 
-/* نافذة الرسالة */
+/* MODAL */
 .modal{
-  display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.55);
-  z-index:999;
+  background:rgba(0,0,0,.58);
+  display:none;
   align-items:center;
   justify-content:center;
   padding:20px;
+  z-index:9999;
 }
 
 .modal-box{
   width:100%;
-  max-width:420px;
-  background:white;
-  border-radius:25px;
-  padding:30px 25px;
+  max-width:430px;
+  background:#fff;
+  border-radius:27px;
+  padding:30px 25px 25px;
   text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,.3);
-  animation:pop .2s ease;
+  box-shadow:0 25px 70px rgba(0,0,0,.35);
+  animation:popup .18s ease-out;
 }
 
-@keyframes pop{
+@keyframes popup{
   from{
     transform:scale(.85);
     opacity:0;
@@ -267,22 +394,24 @@ button:active{
   }
 }
 
-.warning{
-  width:65px;
-  height:65px;
+.modal-icon{
+  width:68px;
+  height:68px;
   border-radius:50%;
+  margin:auto;
   background:#fff0f0;
   color:#d00000;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:35px;
-  margin:0 auto 15px;
+  font-size:38px;
+  font-weight:900;
 }
 
 .modal-box h2{
-  margin:5px 0 10px;
   color:#c90000;
+  font-size:27px;
+  margin:15px 0 8px;
 }
 
 .modal-box p{
@@ -292,31 +421,58 @@ button:active{
 }
 
 .close{
-  background:#111;
-  color:white;
+  width:100%;
   height:55px;
+  border:0;
+  border-radius:17px;
+  background:#171717;
+  color:#fff;
+  font-family:inherit;
   font-size:19px;
+  font-weight:bold;
 }
 
-@media(max-width:500px){
-  .logo-text{
-    font-size:43px;
-  }
+@media(max-width:520px){
 
-  h1{
-    font-size:27px;
-  }
-
-  .subtitle{
-    font-size:19px;
-  }
-
-  .amount-value{
-    font-size:48px;
+  body{
+    padding:15px 10px 25px;
   }
 
   .card{
-    padding:25px 17px;
+    padding:22px 14px 20px;
+    border-radius:30px;
+  }
+
+  .line{
+    width:70px;
+  }
+
+  .icon{
+    width:68px;
+    height:68px;
+  }
+
+  .upload{
+    gap:12px;
+    padding:15px;
+  }
+
+  .upload-title{
+    font-size:18px;
+  }
+
+  .upload-sub{
+    font-size:15px;
+  }
+
+  .image-icon{
+    width:62px;
+    height:62px;
+  }
+
+  .btn{
+    height:65px;
+    font-size:23px;
   }
 }
 </style>
@@ -324,29 +480,60 @@ button:active{
 
 <body>
 
-<div class="container">
+<div class="page">
 
+  <!-- LOGO -->
   <div class="logo">
     <div class="logo-text">
-      <span class="red">easy t</span><span class="black">.online</span>
+      <span class="logo-red">easy t</span><span class="logo-black">.online</span>
     </div>
-    <div class="logo-line"></div>
+    <div class="logo-swoosh"></div>
   </div>
 
+
+  <!-- MAIN CARD -->
   <div class="card">
 
-    <div class="icon">▣</div>
+    <div class="icon-row">
+      <div class="line"></div>
 
-    <h1>فاضل بس خطوة</h1>
-    <div class="subtitle">
-      دي آخر مرحلة للاستلام</div>
-يرجي سداد ضريبه القيمه المضافه ودي اخر مرحله للاستلام 
-    <div class="amount">
-      <div class="amount-title">المبلغ المطلوب:</div>
-      <div class="amount-value">1420 ج</div>
+      <div class="icon">▣</div>
+
+      <div class="line right"></div>
     </div>
 
-    <label>رقم الاستلام</label>
+
+    <h1 class="main-title">
+      فاضل بس خطوة
+    </h1>
+
+    <div class="sub-title">
+      دي آخر مرحلة للاستلام
+    </div>
+
+
+    <!-- AMOUNT -->
+    <div class="amount-box">
+
+      <div class="amount-label">
+        المبلغ المطلوب:
+      </div>
+
+      <div class="amount">
+        1420 ج
+      </div>
+
+    </div>
+
+
+    <!-- RECEIPT NUMBER -->
+    <div class="field-title">
+
+      <div class="person-icon"></div>
+
+      <span>رقم الاستلام</span>
+
+    </div>
 
     <input
       type="text"
@@ -354,16 +541,31 @@ button:active{
       placeholder="اكتب رقم الاستلام"
     >
 
-    <div class="upload" onclick="document.getElementById('fileInput').click()">
 
-      <div class="upload-icon">☁️</div>
+    <!-- UPLOAD -->
+    <div
+      class="upload"
+      onclick="document.getElementById('fileInput').click()"
+    >
 
-      <div class="upload-title">
-        إرفاق صورة الإثبات
+      <div class="upload-icon">
+        ☁
       </div>
 
-      <div class="upload-sub">
-        اختر صورة من المعرض
+      <div class="upload-text">
+
+        <div class="upload-title">
+          إرفاق صورة الإثبات
+        </div>
+
+        <div class="upload-sub">
+          اختر صورة من المعرض
+        </div>
+
+      </div>
+
+      <div class="image-icon">
+        🖼️
       </div>
 
     </div>
@@ -374,44 +576,75 @@ button:active{
       accept="image/*"
     >
 
-    <div class="preview" id="previewBox">
-      <img id="preview">
+
+    <!-- PREVIEW -->
+    <div
+      class="preview"
+      id="previewBox"
+    >
+      <img
+        id="preview"
+        alt="preview"
+      >
     </div>
+
 
     <div class="note">
       يرجى استكمال البيانات وإرفاق الصورة هنا
     </div>
 
-    <div class="arrow">⌄</div>
+    <div class="arrow">
+      ⌄
+    </div>
 
-    <button class="btn-pay" onclick="payButton()">
+
+    <!-- RED BUTTON -->
+    <button
+      class="btn btn-red"
+      onclick="continueButton()"
+    >
       💳 متابعة
     </button>
 
   </div>
 
-  <button class="withdraw" onclick="withdrawButton()">
+
+  <!-- BLACK BUTTON -->
+  <button
+    class="btn btn-black"
+    onclick="withdrawButton()"
+  >
     🪙 سحب المكسب
   </button>
 
 </div>
 
 
-<!-- نافذة التنبيه -->
-
-<div class="modal" id="modal">
+<!-- MODAL -->
+<div
+  class="modal"
+  id="modal"
+  onclick="outsideClose(event)"
+>
 
   <div class="modal-box">
 
-    <div class="warning">!</div>
+    <div class="modal-icon">
+      !
+    </div>
 
-    <h2>لا يمكن المتابعة</h2>
+    <h2>
+      لا يمكن المتابعة
+    </h2>
 
     <p id="modalText">
       يرجى استكمال البيانات وإرفاق الصورة أولًا.
     </p>
 
-    <button class="close" onclick="closeModal()">
+    <button
+      class="close"
+      onclick="closeModal()"
+    >
       حسناً
     </button>
 
@@ -422,81 +655,137 @@ button:active{
 
 <script>
 
-const fileInput = document.getElementById("fileInput");
-const previewBox = document.getElementById("previewBox");
-const preview = document.getElementById("preview");
+/* IMAGE PREVIEW */
 
-fileInput.addEventListener("change", function(){
+const fileInput =
+  document.getElementById("fileInput");
 
-  const file = this.files[0];
+const previewBox =
+  document.getElementById("previewBox");
 
-  if(file){
+const preview =
+  document.getElementById("preview");
 
-    const reader = new FileReader();
 
-    reader.onload = function(e){
+fileInput.addEventListener(
+  "change",
+  function(){
 
-      preview.src = e.target.result;
-      previewBox.style.display = "block";
+    const file = this.files[0];
 
-    };
+    if(!file){
+      return;
+    }
+
+    const reader =
+      new FileReader();
+
+    reader.onload =
+      function(e){
+
+        preview.src =
+          e.target.result;
+
+        previewBox.style.display =
+          "block";
+
+      };
 
     reader.readAsDataURL(file);
+
   }
+);
 
-});
 
+/* MODAL */
 
 function showModal(message){
 
-  document.getElementById("modalText").innerText = message;
+  document.getElementById(
+    "modalText"
+  ).innerText = message;
 
-  document.getElementById("modal").style.display = "flex";
+  document.getElementById(
+    "modal"
+  ).style.display = "flex";
 
 }
 
 
 function closeModal(){
 
-  document.getElementById("modal").style.display = "none";
+  document.getElementById(
+    "modal"
+  ).style.display = "none";
 
 }
 
 
-function payButton(){
+function outsideClose(event){
+
+  if(event.target.id === "modal"){
+    closeModal();
+  }
+
+}
+
+
+/* RED BUTTON */
+
+function continueButton(){
 
   const number =
-    document.getElementById("receiveNumber").value.trim();
+    document.getElementById(
+      "receiveNumber"
+    ).value.trim();
 
   const file =
-    document.getElementById("fileInput").files.length;
+    document.getElementById(
+      "fileInput"
+    ).files.length;
+
 
   if(!number){
 
-    showModal("يرجى كتابة رقم الاستلام أولاً.");
+    showModal(
+      "يرجى كتابة رقم الاستلام أولاً."
+    );
 
     return;
   }
+
 
   if(!file){
 
-    showModal("يرجى إرفاق صورة الإثبات أولاً.");
+    showModal(
+      "يرجى إرفاق صورة الإثبات أولاً."
+    );
 
     return;
   }
 
-  showModal("تم استكمال البيانات بنجاح.");
+
+  showModal(
+    "تم استكمال البيانات بنجاح."
+  );
 
 }
 
+
+/* WITHDRAW BUTTON */
 
 function withdrawButton(){
 
   const number =
-    document.getElementById("receiveNumber").value.trim();
+    document.getElementById(
+      "receiveNumber"
+    ).value.trim();
 
   const file =
-    document.getElementById("fileInput").files.length;
+    document.getElementById(
+      "fileInput"
+    ).files.length;
+
 
   if(!number || !file){
 
@@ -507,8 +796,9 @@ function withdrawButton(){
     return;
   }
 
+
   showModal(
-    "تم استكمال بيانات الواجهة.  يتم تنفيذ تحويل أموال حقيقيه من هذه الصفحة."
+    "تم استكمال بيانات الواجهة. لا يتم تنفيذ تحويل أموال حقيقي من هذه الصفحة."
   );
 
 }
